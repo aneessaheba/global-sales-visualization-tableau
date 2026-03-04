@@ -1,0 +1,64 @@
+
+╔══════════════════════════════════════════════════════════════════╗
+║        TABLEAU DESKTOP — CONNECTION & DASHBOARD GUIDE            ║
+╚══════════════════════════════════════════════════════════════════╝
+
+CONNECT TO DATA
+  Tableau Desktop → Connect → Text File
+  Select: tableau_exports/retail_sales_full.csv
+  Verify field types:
+    date           → Date
+    revenue/profit → Number (decimal)
+    year/month     → Number (whole)
+
+CALCULATED FIELDS TO CREATE
+  • Profit Margin %   : SUM([Profit]) / SUM([Revenue])
+  • Revenue (Millions): SUM([Revenue]) / 1000000
+  • Discount Tier     : IF [Discount]=0 THEN '0%'
+                        ELSEIF [Discount]<=0.05 THEN '1-5%'
+                        ELSEIF [Discount]<=0.10 THEN '6-10%'
+                        ELSEIF [Discount]<=0.15 THEN '11-15%'
+                        ELSEIF [Discount]<=0.20 THEN '16-20%'
+                        ELSE '21-25%' END
+
+RECOMMENDED DASHBOARD SHEETS
+  Sheet 1 — Revenue Over Time
+    Chart  : Line chart
+    Columns: MONTH(Date)   Rows: SUM(Revenue)
+    Color  : Year          Add: Reference line at average
+    Finding: Revenue dipped in 2022, recovering 2023-2024
+
+  Sheet 2 — Revenue by Region (Bar)
+    Chart  : Horizontal bar
+    Rows   : Region        Columns: SUM(Revenue)
+    Color  : Region        Sort: Descending
+    Finding: North America = 37% of total revenue
+
+  Sheet 3 — Category Treemap
+    Chart  : Treemap
+    Size   : SUM(Revenue)  Color: Profit Margin %
+    Label  : Category
+    Finding: Electronics 63% share; all categories ~40% margin
+
+  Sheet 4 — Discount vs Profit Scatter
+    Chart  : Scatter plot
+    X-axis : Discount Tier  Y-axis: AVG(Profit Margin %)
+    Color  : Category       Add: Trend line
+    Finding: Flat trend — discounts do not erode margins
+
+  Sheet 5 — Segment & Channel Performance
+    Chart  : Stacked bar
+    Columns: Segment        Rows: SUM(Revenue)
+    Color  : Channel
+    Finding: Mobile App leads in all segments
+
+FILTERS TO ADD (apply to all sheets via dashboard)
+  • Date Range  : drag [Date] → Filters → Range of Dates
+  • Region      : drag [Region] → Filters → show as dropdown
+  • Category    : drag [Category] → Filters → show as checkbox
+
+STORY (4 slides for presentation)
+  1. Executive KPI overview — revenue, profit, margin tiles
+  2. Geographic & category breakdown — where money comes from
+  3. Channel & segment deep-dive — who buys and how
+  4. Discount impact — why deeper discounts are not the answer

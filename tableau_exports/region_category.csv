@@ -1,0 +1,26 @@
+region,category,revenue,profit,orders,margin
+Asia-Pacific,Clothing,211890.25,83715.28,254,39.51
+Asia-Pacific,Electronics,1309232.02,512658.59,279,39.16
+Asia-Pacific,Food & Beverage,77763.74,30039.47,216,38.63
+Asia-Pacific,Home & Garden,284828.62,115399.75,201,40.52
+Asia-Pacific,Sports & Outdoors,168127.05,66083.54000000001,166,39.31
+Europe,Clothing,269232.54,107204.03,332,39.82
+Europe,Electronics,1462768.06,580568.48,308,39.69
+Europe,Food & Beverage,103070.02,42383.5,277,41.12
+Europe,Home & Garden,283005.16,111845.54,233,39.52
+Europe,Sports & Outdoors,186999.81,77052.69,182,41.2
+Latin America,Clothing,85161.65,35750.59,104,41.98
+Latin America,Electronics,473772.72,196204.04,112,41.41
+Latin America,Food & Beverage,41916.54,17327.46,108,41.34
+Latin America,Home & Garden,123551.26,51259.83,86,41.49
+Latin America,Sports & Outdoors,45574.31,18203.6,53,39.94
+Middle East & Africa,Clothing,53209.1,21783.81,65,40.94
+Middle East & Africa,Electronics,325831.01,120698.08,63,37.04
+Middle East & Africa,Food & Beverage,20173.31,7791.54,56,38.62
+Middle East & Africa,Home & Garden,65619.81,25849.47,55,39.39
+Middle East & Africa,Sports & Outdoors,39894.1,15479.19,37,38.8
+North America,Clothing,332648.85,134154.92,396,40.33
+North America,Electronics,2035743.23,798418.48,435,39.22
+North America,Food & Beverage,124168.19,48681.23,345,39.21
+North America,Home & Garden,500716.92,198702.65,360,39.68
+North America,Sports & Outdoors,273447.18,108122.84,277,39.54
